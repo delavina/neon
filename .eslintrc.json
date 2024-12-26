@@ -6,7 +6,9 @@
   "extends": [
     "eslint:recommended",
     "plugin:@next/next/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "next/core-web-vitals",
+    "next/typescript"
   ],
   "parserOptions": {
     "ecmaFeatures": {
