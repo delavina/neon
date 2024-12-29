@@ -1,4 +1,4 @@
-import { boolean, pgTable, serial, text, timestamp, varchar } from "drizzle-orm/pg-core"
+import { boolean, numeric, pgTable, serial, text, timestamp, varchar } from "drizzle-orm/pg-core"
 
 export const postsTable = pgTable("posts", {
   id: serial("id").primaryKey().notNull(),
@@ -31,10 +31,10 @@ export const sessionsTable = pgTable("sessions", {
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
 })
 
-export const productsTable = pgTable("products", {
-  id: serial("id").primaryKey().notNull(),
+export const products = pgTable("products", {
+  slug: text("slug").notNull().primaryKey(),
   name: varchar("name", { length: 256 }).notNull(),
-  price: text("price").notNull(),
+  price: numeric("price").notNull(),
   currency: text("currency").notNull(),
   description: text("description").notNull(),
   image: text("image").notNull(),
